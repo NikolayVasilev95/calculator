@@ -21,9 +21,9 @@ public class CalculatorController {
     private CalculatorService calculatorService;
 
     @GetMapping("/api/calculator")
-    public ResponseEntity<?> calculatorApi(@RequestParam @Positive @NotNull Long number, @RequestParam @Positive @NotNull Integer thread) {
+    public ResponseEntity<?> calculatorApi(@RequestParam @Positive @NotNull long number, @RequestParam @Positive @NotNull Integer threat) {
         try {
-            CalculatorDto dto = calculatorService.concurrentCalculator(number, thread);
+            CalculatorDto dto = calculatorService.concurrentCalculator(number, threat);
             return ResponseEntity.ok(dto);
         } catch (InterruptedException e) {
             return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).build();
