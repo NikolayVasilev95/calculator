@@ -22,7 +22,7 @@ public class CalculatorController {
     private CalculatorService calculatorService;
 
     @GetMapping("/api/calculator")
-    public ResponseEntity<?> calculatorApi(@RequestParam @Positive @NotNull long number, @RequestParam @Positive @NotNull Integer threat) {
+    public ResponseEntity<?> calculatorApi(@RequestParam @Positive @NotNull Long number, @RequestParam @Positive @NotNull Integer threat) {
         try {
             CalculatorDto dto = calculatorService.concurrentCalculator(number, threat);
             return ResponseEntity.ok(dto);
