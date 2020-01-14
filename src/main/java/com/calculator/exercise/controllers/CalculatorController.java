@@ -21,7 +21,6 @@ public class CalculatorController {
     @Autowired
     private CalculatorService calculatorService;
 
-    @CrossOrigin(origins = "https://e-commerce-dev-front.000webhostapp.com/calculator")
     @GetMapping("/api/calculator")
     public ResponseEntity<?> calculatorApi(@RequestParam @Positive @NotNull long number, @RequestParam @Positive @NotNull Integer threat) {
         try {
