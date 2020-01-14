@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +21,7 @@ public class CalculatorController {
     @Autowired
     private CalculatorService calculatorService;
 
+    @CrossOrigin(origins = "https://e-commerce-dev-front.000webhostapp.com/calculator")
     @GetMapping("/api/calculator")
     public ResponseEntity<?> calculatorApi(@RequestParam @Positive @NotNull long number, @RequestParam @Positive @NotNull Integer threat) {
         try {
